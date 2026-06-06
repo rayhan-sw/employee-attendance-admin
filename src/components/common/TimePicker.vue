@@ -271,6 +271,7 @@ onBeforeUnmount(() => {
       aria-haspopup="dialog"
       :aria-expanded="isOpen"
       :aria-controls="panelId"
+      :aria-invalid="invalid"
       :aria-describedby="error ? errorId : undefined"
       @click="isOpen ? closePicker() : openPicker()"
     >
@@ -412,7 +413,7 @@ onBeforeUnmount(() => {
       <span class="visually-hidden">Waktu sementara {{ temporaryValue }}</span>
     </div>
 
-    <div v-if="error" :id="errorId" class="invalid-feedback d-block">
+    <div v-if="error" :id="errorId" class="invalid-feedback d-block" role="alert">
       {{ error }}
     </div>
   </div>

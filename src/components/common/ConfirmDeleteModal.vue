@@ -70,7 +70,7 @@ onBeforeUnmount(() => {
           class="card-header bg-white border-bottom d-flex align-items-center justify-content-between gap-3 p-4"
         >
           <div class="d-flex align-items-center gap-3">
-            <span class="confirm-modal-icon">
+            <span class="confirm-modal-icon" aria-hidden="true">
               <i class="bi bi-trash3"></i>
             </span>
             <h2 id="confirmDeleteTitle" class="h5 fw-semibold mb-0">
@@ -81,7 +81,8 @@ onBeforeUnmount(() => {
             class="btn-close"
             type="button"
             :disabled="loading"
-            aria-label="Tutup modal"
+            aria-label="Tutup modal konfirmasi hapus"
+            title="Tutup modal konfirmasi hapus"
             @click="emit('close')"
           ></button>
         </div>

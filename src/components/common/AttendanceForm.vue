@@ -127,11 +127,15 @@ watch(
             v-model="form.firstName"
             class="form-control"
             :class="{ 'is-invalid': fieldError('firstName') }"
+            :aria-invalid="Boolean(fieldError('firstName'))"
+            :aria-describedby="fieldError('firstName') ? 'employeeFirstNameError' : undefined"
             type="text"
             autocomplete="given-name"
             placeholder="Masukkan nama depan"
           />
-          <div class="invalid-feedback">{{ fieldError('firstName') }}</div>
+          <div id="employeeFirstNameError" class="invalid-feedback" role="alert">
+            {{ fieldError('firstName') }}
+          </div>
         </div>
 
         <div class="col-12 col-md-6 col-lg-4">
@@ -143,11 +147,15 @@ watch(
             v-model="form.lastName"
             class="form-control"
             :class="{ 'is-invalid': fieldError('lastName') }"
+            :aria-invalid="Boolean(fieldError('lastName'))"
+            :aria-describedby="fieldError('lastName') ? 'employeeLastNameError' : undefined"
             type="text"
             autocomplete="family-name"
             placeholder="Masukkan nama belakang"
           />
-          <div class="invalid-feedback">{{ fieldError('lastName') }}</div>
+          <div id="employeeLastNameError" class="invalid-feedback" role="alert">
+            {{ fieldError('lastName') }}
+          </div>
         </div>
 
         <div class="col-12 col-lg-3">
@@ -159,12 +167,16 @@ watch(
             v-model="form.gender"
             class="form-select"
             :class="{ 'is-invalid': fieldError('gender') }"
+            :aria-invalid="Boolean(fieldError('gender'))"
+            :aria-describedby="fieldError('gender') ? 'employeeGenderError' : undefined"
           >
             <option value="" disabled>Pilih jenis kelamin</option>
             <option value="Laki-laki">Laki-laki</option>
             <option value="Perempuan">Perempuan</option>
           </select>
-          <div class="invalid-feedback">{{ fieldError('gender') }}</div>
+          <div id="employeeGenderError" class="invalid-feedback" role="alert">
+            {{ fieldError('gender') }}
+          </div>
         </div>
 
         <div class="col-12">
@@ -176,10 +188,12 @@ watch(
             v-model="form.addressStreet"
             class="form-control"
             :class="{ 'is-invalid': fieldError('addressStreet') }"
+            :aria-invalid="Boolean(fieldError('addressStreet'))"
+            :aria-describedby="fieldError('addressStreet') ? 'addressStreetError' : undefined"
             rows="3"
             placeholder="Contoh: Jl. Pemuda No. 10"
           ></textarea>
-          <div class="invalid-feedback">
+          <div id="addressStreetError" class="invalid-feedback" role="alert">
             {{ fieldError('addressStreet') }}
           </div>
         </div>
@@ -193,10 +207,14 @@ watch(
             v-model="form.addressCity"
             class="form-control"
             :class="{ 'is-invalid': fieldError('addressCity') }"
+            :aria-invalid="Boolean(fieldError('addressCity'))"
+            :aria-describedby="fieldError('addressCity') ? 'addressCityError' : undefined"
             type="text"
             placeholder="Contoh: Semarang"
           />
-          <div class="invalid-feedback">{{ fieldError('addressCity') }}</div>
+          <div id="addressCityError" class="invalid-feedback" role="alert">
+            {{ fieldError('addressCity') }}
+          </div>
         </div>
 
         <div class="col-12 col-md-4">
@@ -208,10 +226,14 @@ watch(
             v-model="form.addressProvince"
             class="form-control"
             :class="{ 'is-invalid': fieldError('addressProvince') }"
+            :aria-invalid="Boolean(fieldError('addressProvince'))"
+            :aria-describedby="
+              fieldError('addressProvince') ? 'addressProvinceError' : undefined
+            "
             type="text"
             placeholder="Contoh: Jawa Tengah"
           />
-          <div class="invalid-feedback">
+          <div id="addressProvinceError" class="invalid-feedback" role="alert">
             {{ fieldError('addressProvince') }}
           </div>
         </div>
@@ -225,12 +247,16 @@ watch(
             v-model="form.addressPostalCode"
             class="form-control"
             :class="{ 'is-invalid': fieldError('addressPostalCode') }"
+            :aria-invalid="Boolean(fieldError('addressPostalCode'))"
+            :aria-describedby="
+              fieldError('addressPostalCode') ? 'addressPostalCodeError' : undefined
+            "
             type="text"
             inputmode="numeric"
             autocomplete="postal-code"
             placeholder="Contoh: 50132"
           />
-          <div class="invalid-feedback">
+          <div id="addressPostalCodeError" class="invalid-feedback" role="alert">
             {{ fieldError('addressPostalCode') }}
           </div>
         </div>
@@ -263,9 +289,13 @@ watch(
             v-model="form.attendanceDate"
             class="form-control"
             :class="{ 'is-invalid': fieldError('attendanceDate') }"
+            :aria-invalid="Boolean(fieldError('attendanceDate'))"
+            :aria-describedby="
+              fieldError('attendanceDate') ? 'attendanceDateError' : undefined
+            "
             type="date"
           />
-          <div class="invalid-feedback">
+          <div id="attendanceDateError" class="invalid-feedback" role="alert">
             {{ fieldError('attendanceDate') }}
           </div>
         </div>

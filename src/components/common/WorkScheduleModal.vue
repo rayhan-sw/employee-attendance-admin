@@ -161,7 +161,8 @@ onBeforeUnmount(() => {
           <button
             class="btn-close"
             type="button"
-            aria-label="Tutup modal"
+            aria-label="Tutup modal pengaturan jam kerja"
+            title="Tutup modal pengaturan jam kerja"
             @click="closeModal"
           ></button>
         </div>

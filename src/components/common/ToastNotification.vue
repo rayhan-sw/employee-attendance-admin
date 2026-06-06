@@ -73,7 +73,7 @@ onBeforeUnmount(clearCloseTimer)
       aria-live="polite"
       aria-atomic="true"
     >
-      <span class="admin-toast-icon" :class="`text-${type}`">
+      <span class="admin-toast-icon" :class="`text-${type}`" aria-hidden="true">
         <i :class="`bi ${iconClass}`"></i>
       </span>
       <div class="flex-grow-1">
@@ -84,6 +84,7 @@ onBeforeUnmount(clearCloseTimer)
         class="btn-close"
         type="button"
         aria-label="Tutup notifikasi"
+        title="Tutup notifikasi"
         @click="emit('close')"
       ></button>
     </div>

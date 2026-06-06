@@ -112,18 +112,20 @@ function getRecordStatus(record) {
               <RouterLink
                 class="btn btn-sm btn-outline-primary"
                 :to="`/attendance/${attendance.id}/edit`"
-                :aria-label="`Edit data ${attendance.name}`"
+                :aria-label="`Edit data absensi ${attendance.name}`"
+                :title="`Edit data absensi ${attendance.name}`"
               >
-                <i class="bi bi-pencil-square"></i>
+                <i class="bi bi-pencil-square" aria-hidden="true"></i>
                 <span class="d-none d-xxl-inline ms-1">Edit</span>
               </RouterLink>
               <button
                 class="btn btn-sm btn-outline-danger"
                 type="button"
-                :aria-label="`Hapus data ${attendance.name}`"
+                :aria-label="`Hapus data absensi ${attendance.name}`"
+                :title="`Hapus data absensi ${attendance.name}`"
                 @click="emit('delete', attendance.id)"
               >
-                <i class="bi bi-trash3"></i>
+                <i class="bi bi-trash3" aria-hidden="true"></i>
                 <span class="d-none d-xxl-inline ms-1">Delete</span>
               </button>
             </div>
