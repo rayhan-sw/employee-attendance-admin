@@ -522,7 +522,10 @@ select {
 
 .attendance-trend {
   display: grid;
-  grid-template-columns: repeat(7, minmax(48px, 1fr));
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
   gap: 0.75rem;
   min-height: 220px;
 }
@@ -1128,17 +1131,29 @@ textarea.form-control {
   }
 
   .attendance-trend {
-    gap: 0.4rem;
-    min-height: 190px;
+    gap: 0.25rem;
+    min-height: 180px;
   }
 
   .attendance-trend-track {
-    max-width: 28px;
-    height: 105px;
+    max-width: 26px;
+    height: 100px;
+  }
+
+  .attendance-trend-count {
+    margin-bottom: 0.3rem;
+    font-size: 0.68rem;
+  }
+
+  .attendance-trend-item strong {
+    margin-top: 0.4rem;
+    font-size: 0.68rem;
   }
 
   .attendance-trend-item small {
-    font-size: 0.58rem;
+    max-width: 100%;
+    font-size: 0.54rem;
+    letter-spacing: -0.02em;
   }
 
   .content-card .card-header,
